@@ -26,6 +26,7 @@ ul li{
 	opacity: 0.2;
 }
 
-#map_canvas { 
-height: 300px; 
-width: 350px;} 
+#accueil #map_canvas { 
+  height: 250px; 
+  width: 300px;
+} 
