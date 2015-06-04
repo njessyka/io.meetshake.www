@@ -17,8 +17,9 @@
 			<script type="text/javascript" src="js/index.js"></script>
 			<script src="js/jquery-2.1.4.min.js"></script>
 			<script src="js/jquery.mobile-1.4.5.min.js"></script>
-<!-- 			<script src="js/ajax_form.js"></script>
-			<script src="http://maps.google.com/maps/api/js?sensor=false"></script>  -->
+<!-- 			<script src="js/ajax_form.js"></script>   -->
+			<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+			<script src="js/meet.js"></script>
     </head>
     <body> 
 		<div data-role="page" id="accueil">
@@ -34,7 +35,7 @@
 				</div>
 			</div>
 			<div data-role="content">
-				
+				<div id="map_canvas"></div>				
 			</div>
 			<div data-role="footer">Copyright</div>
 		</div>
@@ -105,64 +106,7 @@
 					</ul>
 				</div>
 			</div>
-			<div data-role="content">
-
-				<div id="map_canvas"></div>
-				
-				<script type="text/javascript">
-				/*if(navigator.geolocation){
-					alert('Géolocalisation prise en charge');
-				}else{
-					alert('Géolocalisation non disponible');
-				}*/
-
-
-/*				 function localiser(position) {
-					var latitude = position.coords.latitude;
-					var longitude =position.coords.longitude;
-					alert(latitude+longitude);				
-			  }
-
-					function getLocalisation(){
-						if(navigator.geolocation){
-							navigator.geolocation.getCurrentPosition(localiser); 
-
-						}
-						else {
-							alert("Désolé, votre navigateur ne supporte pas la géolocalisation"); 
-						}
-					}*/
-
-					// getLocalisation();
-					if (navigator.geolocation) { 
-						navigator.geolocation.getCurrentPosition(afficher_carte); 
-					} 
-					else { 
-						alert("Désolé, votre navigateur ne supporte pas la géolocalisation"); 
-					} 
-
-					function afficher_carte(position){ 
-						var latitude = position.coords.latitude; 
-						var longitude= position.coords.longitude; 
-						// création d’une nouvelle carte par Google Maps s’effectue simplement par le code suivant auquel on fournit comme paramètres la latitude et la longitude trouvées par l’API de géolocalisation. 
-						var latlng = new google.maps.LatLng(latitude, longitude); 
-						// configuration d'un tableau contenant les paramètres 
-						 var myOptions = { 
-									             zoom: 15, 
-									             center: latlng, 
-									             mapTypeId: google.maps.MapTypeId.ROADMAP 
-													};    
-						var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions); 
-						var marker = new google.maps.Marker({ 
-						             position: latlng,  
-						             map: map,  
-						             title:"Vous êtes ici"  
-						}); 
-					}
-
-				</script>
-
-				
+			<div data-role="content">				
 			</div>
 			<div data-role="footer">Copyright</div>
 		</div>
