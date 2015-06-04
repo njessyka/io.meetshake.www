@@ -24,8 +24,6 @@
 		<div data-role="page" id="accueil">
 			<div data-role="header">
 				<div data-role="navbar" data-theme="c">
-					<h1>Meet'Shake & Move</h1>
-					<h2>Rencontrer autrement</h2>
 					<ul>
 						<li><a href="#accueil" class="ui-btn-active" data-icon="home" data-transition="turn">Accueil</a></li>
 						<li><a href="#inscription" data-icon="edit" data-transition="pop">Inscription</a></li>
@@ -51,7 +49,7 @@
 				</div>
 			</div>
 			<div data-role="content">
-				<form>
+				<form action="db.php" method="get">
 					<fieldset>
 						<label>CIVILITE : </label>
 						<input type="radio" name="civilite" id="radio-m" value="M" checked="checked">
@@ -70,8 +68,8 @@
 						<label for="tel">Tel :</label>
 						<input type="tel" name="tel" id="tel" value="">
 
-						<label for="comment">Comment :</label>
-						<textarea cols="40" rows="8" name="comment" id="comment"></textarea>
+						<label for="comment">Unfair advantage :</label>
+						<textarea cols="40" rows="8" name="comment" id="comment" placeholder="Ce que j'ai, et que les autres n'auront jamais !!"></textarea>
 
 						<input type="button" id="bt_submit" value="Valider" data-theme="a">
 
