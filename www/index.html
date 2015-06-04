@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+			<meta charset="utf-8">
+	    <meta name="format-detection" content="telephone=no">
+	    <meta name="msapplication-tap-highlight" content="no">
+	    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+	    <link rel="stylesheet" type="text/css" href="css/index.css">
+	    <link rel="stylesheet" type="text/css" href="css/meet.css">
+	    <!-- <link rel="stylesheet" type="text/css" href="css/jquery_mobile_css.css"> -->
+	    <title>Meet Shake</title>
+	<!-- 		<script type="text/javascript" src="js/index.js"></script>
+			<script type="text/javascript" src="js/basic_jquery.js"></script>
+				<script type="text/javascript" src="js/jquery_mobile.js"></script> -->
+
+			<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+			<script type="text/javascript" src="js/index.js"></script>
+			<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+			<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+			<script src="js/ajax_form.js"></script>
+			<script src="http://maps.google.com/maps/api/js?sensor=false"></script> 
+    </head>
+    <body>
+		<div data-role="page" id="accueil">
+			<div data-role="header">
+				<div data-role="navbar" data-theme="c">
+					<ul>
+						<li><a href="#accueil" class="ui-btn-active" data-icon="home" data-transition="turn">Accueil</a></li>
+						<li><a href="#inscription" data-icon="edit" data-transition="pop">Inscription</a></li>
+						<li><a href="#compte" data-icon="user" data-transition="flip">Compte</a></li>
+						<li><a href="#contact" data-icon="mail" data-transition="slidefade">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+			<div data-role="content">
+				<div>
+					<ul>
+						<li><img src="img/ciel_1.jpg" id="img1"></li>
+						<li><img src="img/ciel_2.jpg" id="img2"></li>
+						<li><img src="img/ciel_3.jpg" id="img3"></li>
+						<li><img src="img/lune.jpg" id="img4"></li>
+						<li><img src="img/arc.jpg" id="img5"></li>
+					</ul>
+				</div>
+			</div>
+			<div data-role="footer">Copyright</div>
+		</div>
+		<div data-role="page" id="inscription">	
+			<div data-role="header">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#accueil" class="ui-btn-active" data-icon="home" data-transition="turn">Accueil</a></li>
+						<li><a href="#inscription" data-icon="edit" data-transition="pop">Inscription</a></li>
+						<li><a href="#compte" data-icon="user" data-transition="flip">Compte</a></li>
+						<li><a href="#contact" data-icon="mail" data-transition="slidefade">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+			<div data-role="content">
+				<form>
+					<fieldset>
+						<label>CIVILITE : </label>
+						<input type="radio" name="civilite" id="radio-m" value="M" checked="checked">
+						<label for="radio-m">Monsieur</label>
+						<input type="radio" name="civilite" id="radio-mme" value="MME">
+						<label for="radio-mme">Madame</label>
+						<input type="radio" name="civilite" id="radio-mle" value="MLE">
+						<label for="radio-mle">Mademoiselle</label>
+
+						<label for="nom">Nom :</label>
+						<input type="text" name="nom" id="nom" value="">
+
+						<label for="prenom">Prenom :</label>
+						<input type="text" name="prenom" id="prenom" value="">
+
+						<label for="tel">Tel :</label>
+						<input type="tel" name="tel" id="tel" value="">
+
+						<label for="comment">Comment :</label>
+						<textarea cols="40" rows="8" name="comment" id="comment"></textarea>
+
+						<input type="button" id="bt_submit" value="Valider" data-theme="a">
+
+					</fieldset>					
+				</form>
+
+			</div>
+			<div data-role="footer">Copyright</div>
+		</div>
+		<div data-role="page" id="compte">		
+			<div data-role="header">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#accueil" class="ui-btn-active" data-icon="home" data-transition="turn">Accueil</a></li>
+						<li><a href="#inscription" data-icon="edit" data-transition="pop">Inscription</a></li>
+						<li><a href="#compte" data-icon="user" data-transition="flip">Compte</a></li>
+						<li><a href="#contact" data-icon="mail" data-transition="slidefade">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+			<div data-role="content">Meet Shake and Moove</div>
+			<div data-role="footer">Copyright</div>
+		</div>
+		<div data-role="page" id="contact">	
+			<div data-role="header">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#accueil" class="ui-btn-active" data-icon="home" data-transition="turn">Accueil</a></li>
+						<li><a href="#inscription" data-icon="edit" data-transition="pop">Inscription</a></li>
+						<li><a href="#compte" data-icon="user" data-transition="flip">Compte</a></li>
+						<li><a href="#contact" data-icon="mail" data-transition="slidefade">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+			<div data-role="content">
+
+				<div id="map_canvas"></div>
+				
+				<script type="text/javascript">
+				/*if(navigator.geolocation){
+					alert('Géolocalisation prise en charge');
+				}else{
+					alert('Géolocalisation non disponible');
+				}*/
+
+
+/*				 function localiser(position) {
+					var latitude = position.coords.latitude;
+					var longitude =position.coords.longitude;
+					alert(latitude+longitude);				
+			  }
+
+					function getLocalisation(){
+						if(navigator.geolocation){
+							navigator.geolocation.getCurrentPosition(localiser); 
+
+						}
+						else {
+							alert("Désolé, votre navigateur ne supporte pas la géolocalisation"); 
+						}
+					}*/
+
+					// getLocalisation();
+					if (navigator.geolocation) { 
+						navigator.geolocation.getCurrentPosition(afficher_carte); 
+					} 
+					else { 
+						alert("Désolé, votre navigateur ne supporte pas la géolocalisation"); 
+					} 
+
+					function afficher_carte(position){ 
+						var latitude = position.coords.latitude; 
+						var longitude= position.coords.longitude; 
+						// création d’une nouvelle carte par Google Maps s’effectue simplement par le code suivant auquel on fournit comme paramètres la latitude et la longitude trouvées par l’API de géolocalisation. 
+						var latlng = new google.maps.LatLng(latitude, longitude); 
+						// configuration d'un tableau contenant les paramètres 
+						 var myOptions = { 
+									             zoom: 15, 
+									             center: latlng, 
+									             mapTypeId: google.maps.MapTypeId.ROADMAP 
+													};    
+						var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions); 
+						var marker = new google.maps.Marker({ 
+						             position: latlng,  
+						             map: map,  
+						             title:"Vous êtes ici"  
+						}); 
+					}
+
+					// afficher_carte();
+
+				</script>
+
+				
+			</div>
+			<div data-role="footer">Copyright</div>
+		</div>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+ul {
+	list-style-type: none; 
+}
+
+ul li{
+	display: inline-block;
+}
+
+#img2, #img3, #img4, #img5{
+	display: none;
+}
+
+.swipeToLeft{
+	transform: rotate(-45deg);
+	opacity: 0.2;
+
+}
+
+.currentImg{
+	transform: translate(-15px,-180px);
+	z-index: 1000;
+}
+
+.swipeToRight{
+	transform: rotate(45deg);
+	opacity: 0.2;
+}
+
+#map_canvas { 
+height: 300px; 
+width: 400px;} 
