@@ -2,9 +2,9 @@ $(function(){
 	
 	
 	var users = [
-     	[3, 'Marina','img/users/marina_3.jpg',24],
-			[2, 'Pauline','img/users/pauline_2.jpg',19],
-			[ 1,'Sandra','img/users/sandra_1.jpg',28]
+     	[3, 'Marina','img/users/marina_3/marina_3_profile.jpg',24],
+			[2, 'Pauline','img/users/pauline_2/pauline_2_profile.jpg',19],
+			[ 1,'Sandra','img/users/sandra_1/sandra_1_profile.jpg',28]
     ];
 
   var locations = [
@@ -40,23 +40,21 @@ $(function(){
       });
  
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
-	
-		// console.log ('currentId : '+currentId);
-	
-		var imgUrl, user, age, content ,idUser;
+
+		var imgUrl, user, age, content ,idUser, prenom;
 
 		for(var j=0; j < users.length; j++ ){
 			user = users[j];
 			idUser = user[0] ;			
 			
 			if(idUser === currentId){
+				prenom =  user[1];   //user's first name
 				imgUrl = user[2];   //url image user
 				age = user[3];   // user age
 			}			
-			
 		}
 		
-		content = "<div><img src='"+ imgUrl +"' class='img_miniat'><p>Age : "+ age +" ans</p></div>";		
+		content = "<div><img src='"+ imgUrl +"' class='img_miniat'><a href='' class='ui-icon-eye ui-btn-icon-right'></a><p>Prénom : "+ prenom +"<br>Age : "+ age +" ans <br></p></div>";		
 
           return function() {
             infowindow.setContent(content);
