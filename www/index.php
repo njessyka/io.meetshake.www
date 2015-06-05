@@ -1,7 +1,6 @@
 <?php
-session_start();
 include_once('users.php');
-
+include_once('functions.php');
 
 ?>
 
@@ -45,7 +44,9 @@ include_once('users.php');
 			</div>
 			<div data-role="content">
 				<div id="map_canvas"></div>	
-
+				<?php
+					echo $msg;
+				?>
 			</div>
 			<div data-role="footer">Copyright</div>
 		</div>
@@ -105,7 +106,7 @@ include_once('users.php');
 				</div>
 			</div>
 			<div data-role="content">
-				<form action="connexion.php" method="post">
+				<form action="" method="post">
 					<h1>Se conecter</h1>
 					<fieldset>
 						<label for="nom">Nom :</label>
