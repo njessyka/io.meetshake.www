@@ -4,4 +4,5 @@ $_SESSION['users']= array(
 	2 => array('Pauline','img/users/pauline_2/' ), 
 	3 => array('Marina', 'img/users/marina_3/'),
 );
+
 ?>

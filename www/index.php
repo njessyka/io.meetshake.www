@@ -1,0 +1,140 @@
+<?php
+session_start();
+include_once('users.php');
+
+
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+			<meta charset="utf-8">
+	    <meta name="format-detection" content="telephone=no">
+	    <meta name="msapplication-tap-highlight" content="no">
+	    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+	    <link rel="stylesheet" type="text/css" href="css/index.css">
+	    <link rel="stylesheet" type="text/css" href="css/meet.css">	   
+	    <title>Meet Shake</title>
+			<link rel="stylesheet" href="css/jquery.mobile.theme-1.4.5.min.css" />
+			<link rel="stylesheet" href="css/jquery.mobile.external-png-1.4.5.min.css" />
+			<link rel="stylesheet" href="css/jquery.mobile.icons-1.4.5.min.css" />
+			<link rel="stylesheet" href="css/jquery.mobile.inline-png-1.4.5.min.css" />
+			<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
+			<link rel="stylesheet" href="css/jquery.mobile.inline-svg-1.4.5.min.css" />
+			<script type="text/javascript" src="js/index.js"></script>
+			<script src="js/jquery-2.1.4.min.js"></script>
+			<script src="js/jquery.mobile-1.4.5.min.js"></script>	
+<!-- 			<script src="js/ajax_form.js"></script>   -->
+			<!-- <script src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
+
+			<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+			<script src="js/meet.js"></script>
+    </head>
+    <body>
+		<!-- ACCUEIL -->
+		<div data-role="page" id="accueil">
+			<div data-role="header">
+				<div data-role="navbar" data-theme="c">
+					<ul>
+						<li><a href="#accueil" class="ui-btn-active" data-icon="home" data-transition="turn">Accueil</a></li>
+						<li><a href="#inscription" data-icon="edit" data-transition="pop">Inscription</a></li>
+						<li><a href="#compte" data-icon="user" data-transition="flip">Compte</a></li>
+						<li><a href="#contact" data-icon="mail" data-transition="slidefade">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+			<div data-role="content">
+				<div id="map_canvas"></div>	
+
+			</div>
+			<div data-role="footer">Copyright</div>
+		</div>
+		
+		<!-- INSCRIPTION -->
+		<div data-role="page" id="inscription">	
+			<div data-role="header">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#accueil" class="ui-btn-active" data-icon="home" data-transition="turn">Accueil</a></li>
+						<li><a href="#inscription" data-icon="edit" data-transition="pop">Inscription</a></li>
+						<li><a href="#compte" data-icon="user" data-transition="flip">Compte</a></li>
+						<li><a href="#contact" data-icon="mail" data-transition="slidefade">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+			<div data-role="content">
+				<form>
+					<fieldset>
+						<label>CIVILITE : </label>
+						<input type="radio" name="civilite" id="radio-m" value="M" checked="checked">
+						<label for="radio-m">Monsieur</label>
+						<input type="radio" name="civilite" id="radio-mme" value="MME">
+						<label for="radio-mme">Madame</label>
+						<input type="radio" name="civilite" id="radio-mle" value="MLE">
+						<label for="radio-mle">Mademoiselle</label>
+
+						<label for="nom">Nom :</label>
+						<input type="text" name="nom" id="nom" value="">
+
+						<label for="prenom">Prenom :</label>
+						<input type="text" name="prenom" id="prenom" value="">
+
+						<label for="email">E-mail :</label>
+						<input type="email" name="email" id="email" value="">
+
+						<label for="comment">Unfair advantage :</label>
+						<textarea cols="40" rows="8" name="comment" id="comment" placeholder="Ce que j'ai, et que les autres n'auront jamais !!"></textarea>
+
+						<input type="button" id="bt_submit" value="Valider" data-theme="a">
+					</fieldset>					
+				</form>
+			</div>
+			<div data-role="footer">Copyright</div>
+		</div>
+		
+		<!-- COMPTE -->
+		<div data-role="page" id="compte">		
+			<div data-role="header">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#accueil" class="ui-btn-active" data-icon="home" data-transition="turn">Accueil</a></li>
+						<li><a href="#inscription" data-icon="edit" data-transition="pop">Inscription</a></li>
+						<li><a href="#compte" data-icon="user" data-transition="flip">Compte</a></li>
+						<li><a href="#contact" data-icon="mail" data-transition="slidefade">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+			<div data-role="content">
+				<form action="connexion.php" method="post">
+					<h1>Se conecter</h1>
+					<fieldset>
+						<label for="nom">Nom :</label>
+						<input type="text" name="nom" id="nom" value="">
+						<label for="pass">Mot de passe :</label>
+						<input type="password" name="pass" id="pass" value="">
+						<input type="submit" id="bt_submit" value="Se connecter" data-theme="a">
+					</fieldset>
+				</form>
+			</div>
+			<div data-role="footer">Copyright</div>
+		</div>
+		
+		<!-- CONTACT -->
+		<div data-role="page" id="contact">	
+			<div data-role="header">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#accueil" class="ui-btn-active" data-icon="home" data-transition="turn">Accueil</a></li>
+						<li><a href="#inscription" data-icon="edit" data-transition="pop">Inscription</a></li>
+						<li><a href="#compte" data-icon="user" data-transition="flip">Compte</a></li>
+						<li><a href="#contact" data-icon="mail" data-transition="slidefade">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+			<div data-role="content">				
+			</div>
+			<div data-role="footer">Copyright</div>
+		</div>
+
+    </body>
+</html>

@@ -1,5 +1,7 @@
 <?php
 include_once('users.php');
+
+
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +43,9 @@ include_once('users.php');
 				</div>
 			</div>
 			<div data-role="content">
-				<div id="map_canvas"></div>				
+				<div id="map_canvas"></div>	
+
+				<?php print "<pre> --"; print_r($_POST); print "</pre>"?>				
 			</div>
 			<div data-role="footer">Copyright</div>
 		</div>
@@ -101,7 +105,7 @@ include_once('users.php');
 				</div>
 			</div>
 			<div data-role="content">
-				<form action="users.php" method="post">
+				<!-- <form action="users.php" method="post">
 					<h1>Se conecter</h1>
 					<fieldset>
 						<label for="nom">Nom :</label>
@@ -110,7 +114,7 @@ include_once('users.php');
 						<input type="password" name="pass" id="pass" value="">
 						<input type="submit" id="bt_submit" value="Se connecter" data-theme="a">
 					</fieldset>
-				</form>
+				</form> -->
 			</div>
 			<div data-role="footer">Copyright</div>
 		</div>
