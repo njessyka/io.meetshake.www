@@ -56,7 +56,7 @@ $(function(){
 		
 		// content = "<div><img src='"+ imgUrl +"' class='img_miniat'><a href='profile_view.php?idReq="+ currentId +"' class='ui-icon-eye ui-btn-icon-right'></a><p>Prénom : "+ prenom +"<br>Age : "+ age +" ans <br></p></div>";		
 		// content = "<div><img src='"+ imgUrl +"' class='img_miniat'><form method='GET' action='profile_view.php'><input type='hidden' value='"+ currentId+"'> <input type='submit' id='view_profile' class='ui-icon-eye ui-btn-icon-right'></form><a  href='#' class='ui-icon-eye ui-btn-icon-right' id='view_profile'></a><p>Prénom : "+ prenom +"<br>Age : "+ age +" ans <br></p></div>";		
-		content = "<div><img src='"+ imgUrl +"' class='img_miniat'><input type='hidden' id='id_user' value='"+ currentId+"'><button id='view_profile' class='ui-icon-eye ui-btn-icon-right'></button><p>Prénom : "+ prenom +"<br>Age : "+ age +" ans <br></p></div>";		
+		content = "<div><img src='"+ imgUrl +"' class='img_miniat'><input type='hidden' id='id_user' value='"+ currentId+"'><a id='view_profile' data-icon='eye' class='ui-icon-eye ui-btn-icon-right'></a><p>Prénom : "+ prenom +"<br>Age : "+ age +" ans <br></p></div>";		
 	
           return function() {
 			// window.location.replace("profile_view.php?idReq="+ currentId);
