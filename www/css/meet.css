@@ -30,3 +30,8 @@ ul li{
   height: 250px; 
   width: 300px;
 } 
+
+.img_miniat{
+	height: 50px;
+	width: 50px;
+}

@@ -1,4 +1,11 @@
 $(function(){
+	
+	
+	var users = [
+     	[3, 'Marina','img/users/marina_3.jpg',24],
+			[2, 'Pauline','img/users/pauline_2.jpg',19],
+			[ 1,'Sandra','img/users/sandra_1.jpg',28]
+    ];
 
   var locations = [
      	[ 'Marina', 48.796778, 2.310031,3],
@@ -12,7 +19,7 @@ $(function(){
       center: new google.maps.LatLng(48.79638, 2.31159),
       mapTypeControl: false,
       scaleControl: true,
-    streetViewControl: false,
+	streetViewControl: false,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
  
@@ -24,6 +31,7 @@ $(function(){
   for (i = 0 ; i < locations.length ; i++) {  
       var latit = locations[i][1];
       var longit = locations[i][2];
+	  var currentId = locations[i][3];
   
       var marker = new google.maps.Marker({
         position: new google.maps.LatLng(latit, longit),
@@ -32,8 +40,26 @@ $(function(){
       });
  
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
+	
+		// console.log ('currentId : '+currentId);
+	
+		var imgUrl, user, age, content ,idUser;
+
+		for(var j=0; j < users.length; j++ ){
+			user = users[j];
+			idUser = user[0] ;			
+			
+			if(idUser === currentId){
+				imgUrl = user[2];   //url image user
+				age = user[3];   // user age
+			}			
+			
+		}
+		
+		content = "<div><img src='"+ imgUrl +"' class='img_miniat'><p>Age : "+ age +" ans</p></div>";		
+
           return function() {
-            infowindow.setContent(locations[i][0]);
+            infowindow.setContent(content);
             infowindow.open(map, marker);
           };
       })(marker, i));
