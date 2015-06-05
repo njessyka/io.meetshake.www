@@ -1,3 +1,9 @@
+<?php
+
+print_r($_SESSION);
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,7 +29,8 @@
 			<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 			<script src="js/meet.js"></script>
     </head>
-    <body> 
+    <body>
+		<!-- ACCUEIL --></!-->
 		<div data-role="page" id="accueil">
 			<div data-role="header">
 				<div data-role="navbar" data-theme="c">
@@ -40,6 +47,8 @@
 			</div>
 			<div data-role="footer">Copyright</div>
 		</div>
+		
+		<!-- INSCRIPTION -->
 		<div data-role="page" id="inscription">	
 			<div data-role="header">
 				<div data-role="navbar">
@@ -75,12 +84,13 @@
 						<textarea cols="40" rows="8" name="comment" id="comment" placeholder="Ce que j'ai, et que les autres n'auront jamais !!"></textarea>
 
 						<input type="button" id="bt_submit" value="Valider" data-theme="a">
-
 					</fieldset>					
 				</form>
 			</div>
 			<div data-role="footer">Copyright</div>
 		</div>
+		
+		<!-- COMPTE -->
 		<div data-role="page" id="compte">		
 			<div data-role="header">
 				<div data-role="navbar">
@@ -92,9 +102,22 @@
 					</ul>
 				</div>
 			</div>
-			<div data-role="content">Meet Shake and Moove</div>
+			<div data-role="content">
+				<form action="users.php" method="post">
+					<h1>Se conecter</h1>
+					<fieldset>
+						<label for="nom">Nom :</label>
+						<input type="text" name="nom" id="nom" value="">
+						<label for="pass">Mot de passe :</label>
+						<input type="password" name="pass" id="pass" value="">
+						<input type="submit" id="bt_submit" value="Se connecter" data-theme="a">
+					</fieldset>
+				</form>
+			</div>
 			<div data-role="footer">Copyright</div>
 		</div>
+		
+		<!-- CONTACT -->
 		<div data-role="page" id="contact">	
 			<div data-role="header">
 				<div data-role="navbar">
@@ -110,5 +133,6 @@
 			</div>
 			<div data-role="footer">Copyright</div>
 		</div>
+		
     </body>
 </html>
