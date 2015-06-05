@@ -137,6 +137,22 @@ include_once('functions.php');
 			</div>
 			<div data-role="footer">Copyright</div>
 		</div>
+		<!-- PROFIL -->
+		<div data-role="page" id="profil">	
+			<div data-role="header">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#accueil" class="ui-btn-active" data-icon="home" data-transition="turn">Accueil</a></li>
+						<li><a href="#inscription" data-icon="edit" data-transition="pop">Inscription</a></li>
+						<li><a href="#compte" data-icon="user" data-transition="flip">Compte</a></li>
+						<li><a href="#contact" data-icon="mail" data-transition="slidefade">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+			<div data-role="content">				
+			</div>
+			<div data-role="footer">Copyright</div>
+		</div>
 
     </body>
 </html>
