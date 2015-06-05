@@ -5,9 +5,8 @@ $(function(){
 		var civ = $("input:radio:checked").val();
 		var nom = $("#nom").val();
 		var prenom = $("#prenom").val();
-		var tel = $("#tel").val();
+		var email = $("#email").val();
 		var comment = $("#comment").val();
-		// alert(civilite+nom + prenom+tel+comment);
 
 		$.ajax({
 			method:"GET",
