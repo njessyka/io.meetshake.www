@@ -20,4 +20,29 @@ $(function(){
 		});
 
 	});
+	
+	
+	$("#view_profile").click(function(){
+		var idUser = $("#id_user").val();
+		
+		console.log(idUser);
+		
+		
+		$.ajax({
+			method:"GET",
+			url:"profile_view.php",
+			data: {
+				idReq: idUser
+			}
+
+		}).done(function(msg){
+			alert(msg);
+		});
+		
+		
+	});
+	
+	
+	
+	
 });
