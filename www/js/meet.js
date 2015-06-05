@@ -54,7 +54,7 @@ $(function(){
 			}			
 		}
 		
-		content = "<div><img src='"+ imgUrl +"' class='img_miniat'><a href='' class='ui-icon-eye ui-btn-icon-right'></a><p>Prénom : "+ prenom +"<br>Age : "+ age +" ans <br></p></div>";		
+		content = "<div><img src='"+ imgUrl +"' class='img_miniat'><a href='profile_view.php?id="+ idUser +"' class='ui-icon-eye ui-btn-icon-right'></a><p>Prénom : "+ prenom +"<br>Age : "+ age +" ans <br></p></div>";		
 
           return function() {
             infowindow.setContent(content);
