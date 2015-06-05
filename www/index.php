@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once('users.php');
 include_once('functions.php');
 
